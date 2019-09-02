@@ -201,7 +201,7 @@ the unittest module!
 Hypothesis
 ----------
 
-Hypothesis is a library which lets you write tests that are parametrized by
+Hypothesis is a library which lets you write tests that are parameterized by
 a source of examples.  It then generates simple and comprehensible examples
 that make your tests fail, letting you find more bugs with less work.
 
@@ -225,7 +225,7 @@ minimal example of each bug (distinguished exception type and location):
         xs=[1.7976321109618856e+308, 6.102390043022755e+303]
     )
 
-Hypothesis is practical as well as very powerful, and will often find bugs
+Hypothesis is practical as well as very powerful and will often find bugs
 that escaped all other forms of testing.  It integrates well with py.test,
 and has a strong focus on usability in both simple and advanced scenarios.
 
@@ -274,7 +274,7 @@ This way if you ever switch to a newer Python version and no longer need the
 unittest2 module, you can simply change the import in your test module without
 the need to change any other code.
 
-    `unittest2 <http://pypi.python.org/pypi/unittest2>`_
+    `unittest2 <http://pypi.org/project/unittest2>`_
 
 
 mock

@@ -57,23 +57,23 @@ Page title:
 
 .. code-block:: rest
 
-    ===================
+    *******************
     Time is an Illusion
-    ===================
+    *******************
 
 Section headings:
 
 .. code-block:: rest
 
     Lunchtime Doubly So
-    -------------------
+    ===================
 
 Sub section headings:
 
 .. code-block:: rest
 
     Very Deep
-    ~~~~~~~~~
+    ---------
 
 
 *****
@@ -83,6 +83,8 @@ Prose
 Wrap text lines at 78 characters. Where necessary, lines may exceed 78
 characters, especially if wrapping would make the source text more difficult
 to read.
+
+Use Standard American English, not British English.
 
 Use of the `serial comma <https://en.wikipedia.org/wiki/Serial_comma>`_
 (also known as the Oxford comma) is 100% non-optional. Any attempt to
@@ -107,7 +109,10 @@ Command line examples:
         $ run command --help
         $ ls ..
 
-Be sure to include the ``$`` prefix before each line.
+Be sure to include the ``$`` prefix before each line for Unix console examples.
+
+For Windows console examples, use ``doscon`` or ``powershell`` instead of
+``console``, and omit the ``$`` prefix.
 
 Python interpreter examples:
 
@@ -135,7 +140,7 @@ Python examples:
 Externally Linking
 ******************
 
-* Prefer labels for well known subjects (ex: proper nouns) when linking:
+* Prefer labels for well known subjects (e.g. proper nouns) when linking:
 
   .. code-block:: rest
 
@@ -150,7 +155,7 @@ Externally Linking
 
       Read the `Sphinx Tutorial <http://sphinx.pocoo.org/tutorial.html>`_
 
-* Avoid using labels such as "click here", "this", etc. preferring
+* Avoid using labels such as "click here", "this", etc., preferring
   descriptive labels (SEO worthy) instead.
 
 
@@ -209,4 +214,3 @@ documents or large incomplete sections.
     .. todo::
         Learn the Ultimate Answer to the Ultimate Question
         of Life, The Universe, and Everything
-

@@ -10,6 +10,8 @@ The :mod:`logging` module has been a part of Python's Standard Library since
 version 2.3.  It is succinctly described in :pep:`282`.  The documentation
 is notoriously hard to read, except for the `basic logging tutorial`_.
 
+As an alternative, `loguru <https://github.com/Delgan/loguru>`_ provides an approach to logging nearly as simple as using a simple ``print`` statement.
+
 Logging serves two purposes:
 
 - **Diagnostic logging** records events related to the application's
@@ -70,9 +72,9 @@ this in your ``__init__.py``:
 Logging in an Application
 *************************
 
-The `twelve factor app <http://12factor.net>`_, an authoritative reference
+The `twelve factor app <https://12factor.net>`_, an authoritative reference
 for good practice in application development, contains a section on
-`logging best practice <http://12factor.net/logs>`_. It emphatically
+`logging best practice <https://12factor.net/logs>`_. It emphatically
 advocates for treating log events as an event stream, and for
 sending that event stream to standard output to be handled by the
 application environment.
@@ -192,9 +194,9 @@ Example Configuration Directly in Code
     logger.debug('often makes a very good meal of %s', 'visiting tourists')
 
 
-.. _basic logging tutorial: http://docs.python.org/howto/logging.html#logging-basic-tutorial
-.. _logging configuration: https://docs.python.org/howto/logging.html#configuring-logging
-.. _logging tutorial: http://docs.python.org/howto/logging.html
-.. _configuring logging for a library: https://docs.python.org/howto/logging.html#configuring-logging-for-a-library
-.. _log record: https://docs.python.org/library/logging.html#logrecord-attributes
+.. _basic logging tutorial: http://docs.python.org/3/howto/logging.html#logging-basic-tutorial
+.. _logging configuration: https://docs.python.org/3/howto/logging.html#configuring-logging
+.. _logging tutorial: http://docs.python.org/3/howto/logging.html
+.. _configuring logging for a library: https://docs.python.org/3/howto/logging.html#configuring-logging-for-a-library
+.. _log record: https://docs.python.org/3/library/logging.html#logrecord-attributes
 .. _requests source: https://github.com/kennethreitz/requests

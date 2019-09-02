@@ -60,7 +60,7 @@ it is important.
 Sample Repository
 :::::::::::::::::
 
-**tl;dr**: This is what `Kenneth Reitz <http://kennethreitz.org>`_ recommends.
+**tl;dr**: This is what `Kenneth Reitz recommended in 2013<https://www.kennethreitz.org/essays/repository-structure-and-python>`.
 
 This repository is `available on
 GitHub <https://github.com/kennethreitz/samplemod>`__.
@@ -441,8 +441,8 @@ bad practice. **Using** ``import *`` **makes code harder to read and makes
 dependencies less compartmentalized**.
 
 Using ``from modu import func`` is a way to pinpoint the function you want to
-import and put it in the global namespace. While much less harmful than ``import
-*`` because it shows explicitly what is imported in the global namespace, its
+import and put it in the local namespace. While much less harmful than ``import
+*`` because it shows explicitly what is imported in the local namespace, its
 only advantage over a simpler ``import modu`` is that it will save a little
 typing.
 
@@ -675,7 +675,7 @@ by the ``with`` statement. CustomOpen is first instantiated and then its
 is finished executing, the ``__exit__`` method is then called.
 
 And now the generator approach using Python's own
-`contextlib <https://docs.python.org/2/library/contextlib.html>`_:
+`contextlib <https://docs.python.org/3/library/contextlib.html>`_:
 
 .. code-block:: python
 
@@ -809,16 +809,12 @@ and can be used as a key for a dictionary.
 
 One peculiarity of Python that can surprise beginners is that
 strings are immutable. This means that when constructing a string from
-its parts, it is much more efficient to accumulate the parts in a list,
-which is mutable, and then glue ('join') the parts together when the
-full string is needed. One thing to notice, however, is that list
-comprehensions are better and faster than constructing a list in a loop
-with calls to ``append()``.
-
-One other option is using the map function, which can 'map' a function
-('str') to an iterable ('range(20)'). This results in a map object,
-which you can then ('join') together just like the other examples.
-The map function can be even faster than a list comprehension in some cases.
+its parts, appending each part to the string is inefficient because
+the entirety of the string is copied on each append.
+Instead, it is much more efficient to accumulate the parts in a list,
+which is mutable, and then glue (``join``) the parts together when the
+full string is needed. List comprehensions are usually the fastest and
+most idiomatic way to do this.
 
 **Bad**
 
@@ -830,7 +826,7 @@ The map function can be even faster than a list comprehension in some cases.
         nums += str(n)   # slow and inefficient
     print nums
 
-**Good**
+**Better**
 
 .. code-block:: python
 
@@ -840,20 +836,12 @@ The map function can be even faster than a list comprehension in some cases.
         nums.append(str(n))
     print "".join(nums)  # much more efficient
 
-**Better**
-
-.. code-block:: python
-
-    # create a concatenated string from 0 to 19 (e.g. "012..1819")
-    nums = [str(n) for n in range(20)]
-    print "".join(nums)
-
 **Best**
 
 .. code-block:: python
 
     # create a concatenated string from 0 to 19 (e.g. "012..1819")
-    nums = map(str, range(20))
+    nums = [str(n) for n in range(20)]
     print "".join(nums)
 
 One final thing to mention about strings is that using ``join()`` is not always
@@ -902,5 +890,5 @@ Runners
 Further Reading
 ***************
 
-- http://docs.python.org/2/library/
-- http://www.diveintopython.net/toc/index.html
+- http://docs.python.org/3/library/
+- https://www.diveinto.org/python3/
